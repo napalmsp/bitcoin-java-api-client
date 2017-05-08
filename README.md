@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# swagger-java-client
+# Bitcoin Java API Client
 
 ## Requirements
 
@@ -27,8 +26,8 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-    <groupId>io.swagger</groupId>
-    <artifactId>swagger-java-client</artifactId>
+    <groupId>com.astarlabs</groupId>
+    <artifactId>bitcoin-java-api-client</artifactId>
     <version>1.0.0</version>
     <scope>compile</scope>
 </dependency>
@@ -39,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.swagger:swagger-java-client:1.0.0"
+compile "com.astarlabs:bitcoin-java-api-client:1.0.0"
 ```
 
 ### Others
@@ -50,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/swagger-java-client-1.0.0.jar
+* target/bitcoin-java-api-client-1.0.0.jar
 * target/lib/*.jar
 
 ## Getting Started
