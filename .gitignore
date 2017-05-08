@@ -8,6 +8,7 @@
 *.war
 *.ear
 
+<<<<<<< HEAD
 # exclude jar for gradle wrapper
 !gradle/wrapper/*.jar
 
@@ -19,3 +20,7 @@ hs_err_pid*
 target
 .gradle
 build
+=======
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+>>>>>>> bb1e61412cfe16c362adb85e515a779c4b5df321

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # swagger-java-client
 
 ## Requirements
@@ -121,3 +122,7 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 
 contato@astarlabs.com
 
+=======
+# bitcoin-java-api-client
+Astarlabs bitcoin client
+>>>>>>> bb1e61412cfe16c362adb85e515a779c4b5df321
