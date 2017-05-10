@@ -11,7 +11,7 @@
  */
 
 
-package io.swagger.client.api;
+package br.com.astarlabs.client.api;
 
 import org.junit.Ignore;
 import org.junit.Test;

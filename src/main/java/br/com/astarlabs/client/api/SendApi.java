@@ -591,4 +591,186 @@ public class SendApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
+    
+    /* Build call for sendHash */
+    private com.squareup.okhttp.Call sendHashCall(String token, Integer account, String user, String password, String hash, String coin, Integer test, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/send/opreturn/hash".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        if (token != null)
+        localVarFormParams.put("token", token);
+        if (account != null)
+        localVarFormParams.put("account", account);
+        if (user != null)
+        localVarFormParams.put("user", user);
+        if (password != null)
+        localVarFormParams.put("pass", password);
+        if (hash != null)
+        localVarFormParams.put("hash", hash);
+        if (coin != null)
+        localVarFormParams.put("coin", coin);
+        if (test != null)
+        localVarFormParams.put("test", test);
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call sendHashValidateBeforeCall(String token, Integer account, String user, String password, String hash, String coin, Integer test, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'token' is set
+        if (token == null) {
+            throw new ApiException("Missing the required parameter 'token' when calling sendString(Async)");
+        }
+        
+        // verify the required parameter 'account' is set
+        if (account == null) {
+            throw new ApiException("Missing the required parameter 'account' when calling sendString(Async)");
+        }
+        
+        // verify the required parameter 'user' is set
+        if (user == null) {
+            throw new ApiException("Missing the required parameter 'user' when calling sendString(Async)");
+        }
+        
+        // verify the required parameter 'password' is set
+        if (password == null) {
+            throw new ApiException("Missing the required parameter 'password' when calling sendString(Async)");
+        }
+        
+        // verify the required parameter 'string' is set
+        if (hash == null) {
+            throw new ApiException("Missing the required parameter 'string' when calling sendString(Async)");
+        }
+        
+        // verify the required parameter 'coin' is set
+        if (coin == null) {
+            throw new ApiException("Missing the required parameter 'coin' when calling sendString(Async)");
+        }
+        
+        // verify the required parameter 'test' is set
+        if (test == null) {
+            throw new ApiException("Missing the required parameter 'test' when calling sendString(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = sendHashCall(token, account, user, password, hash, coin, test, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Send hash to bitcoin blockchain
+     * Send an OP_RETURN transaction with a string and return the API id for the blockchain transaction. 
+     * @param token a signed JWT token with the company privatekey. (required)
+     * @param account API ID for Account where the coins must be spend. (required)
+     * @param user API user name. (required)
+     * @param password API user password. (required)
+     * @param hash hash to send. (required)
+     * @param coin the coin name - bitcoin/litecoin. (required)
+     * @param test if test &#x3D; 1 so use testnet else test &#x3D; 0 for mainnet. (required)
+     * @return SingleResult
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public SingleResult sendHash(String token, Integer account, String user, String password, String hash, String coin, Integer test) throws ApiException {
+        ApiResponse<SingleResult> resp = sendHashWithHttpInfo(token, account, user, password, hash, coin, test);
+        return resp.getData();
+    }
+
+    /**
+     * Send hash to bitcoin blockchain
+     * Send an OP_RETURN transaction with a string and return the API id for the blockchain transaction. 
+     * @param token a signed JWT token with the company privatekey. (required)
+     * @param account API ID for Account where the coins must be spend. (required)
+     * @param user API user name. (required)
+     * @param password API user password. (required)
+     * @param hash hash to send. (required)
+     * @param coin the coin name - bitcoin/litecoin. (required)
+     * @param test if test &#x3D; 1 so use testnet else test &#x3D; 0 for mainnet. (required)
+     * @return ApiResponse&lt;SingleResult&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<SingleResult> sendHashWithHttpInfo(String token, Integer account, String user, String password, String hash, String coin, Integer test) throws ApiException {
+        com.squareup.okhttp.Call call = sendHashValidateBeforeCall(token, account, user, password, hash, coin, test, null, null);
+        Type localVarReturnType = new TypeToken<SingleResult>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Send hash to bitcoin blockchain (asynchronously)
+     * Send an OP_RETURN transaction with a string and return the API id for the blockchain transaction. 
+     * @param token a signed JWT token with the company privatekey. (required)
+     * @param account API ID for Account where the coins must be spend. (required)
+     * @param user API user name. (required)
+     * @param password API user password. (required)
+     * @param hash hash to send. (required)
+     * @param coin the coin name - bitcoin/litecoin. (required)
+     * @param test if test &#x3D; 1 so use testnet else test &#x3D; 0 for mainnet. (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call sendHashAsync(String token, Integer account, String user, String password, String hash, String coin, Integer test, final ApiCallback<SingleResult> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = sendHashValidateBeforeCall(token, account, user, password, hash, coin, test, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<SingleResult>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    
 }

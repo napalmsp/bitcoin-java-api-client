@@ -23,8 +23,6 @@ public class Token {
         .replaceAll("-----END RSA PRIVATE KEY-----", "")
         .replaceAll("\\s", "");
 		
-		System.out.println(replaced);
-		
 		byte[] encodedPrivateKey = Base64.getDecoder().decode(replaced);
 		
 		PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(encodedPrivateKey);
