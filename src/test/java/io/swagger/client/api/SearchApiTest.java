@@ -37,6 +37,7 @@ public class SearchApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
+    @Ignore
     @Test
     public void searchByAPIIDTest() throws ApiException {
     	
@@ -67,6 +68,7 @@ public class SearchApiTest {
      *          if the Api call fails
      */
     
+    @Ignore
     @Test
     public void searchByContentTest() throws ApiException {
     	

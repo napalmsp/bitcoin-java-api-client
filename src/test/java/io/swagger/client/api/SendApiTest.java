@@ -36,6 +36,7 @@ public class SendApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
+    @Ignore
     @Test
     public void sendFileTest() throws ApiException {
         
@@ -59,6 +60,7 @@ public class SendApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
+    @Ignore
     @Test
     public void sendPayAddressTest() throws ApiException {
         String token = null;
@@ -81,6 +83,7 @@ public class SendApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
+    @Ignore
     @Test
     public void sendStringTest() throws ApiException {
         String token = null;
