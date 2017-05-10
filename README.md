@@ -25,6 +25,14 @@ Refer to the [official documentation](https://maven.apache.org/plugins/maven-dep
 Add this dependency to your project's POM:
 
 ```xml
+<repository>
+    <id>astarlabs-maven-repo</id>
+    <name>git-maven-repo-astarlabs</name>
+    <url>https://github.com/astarlabs/maven-repo</url>
+</repository>
+```
+
+```xml
 <dependency>
     <groupId>com.astarlabs</groupId>
     <artifactId>bitcoin-java-api-client</artifactId>
@@ -122,8 +130,3 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 ## Author
 
 contato@astarlabs.com
-
-=======
-# bitcoin-java-api-client
-Astarlabs bitcoin client
->>>>>>> bb1e61412cfe16c362adb85e515a779c4b5df321
