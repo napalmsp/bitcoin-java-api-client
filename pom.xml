@@ -5,7 +5,7 @@
 	<artifactId>bitcoin-java-api-client</artifactId>
 	<packaging>jar</packaging>
 	<name>bitcoin-java-api-client</name>
-	<version>1.0.0</version>
+	<version>1.0.10</version>
 	<url>https://github.com/swagger-api/swagger-codegen</url>
 	<description>Astarlabs Java Bitcoin API client</description>
 	<prerequisites>

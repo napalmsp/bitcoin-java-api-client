@@ -36,7 +36,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.astarlabs</groupId>
     <artifactId>bitcoin-java-api-client</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.10</version>
     <scope>compile</scope>
 </dependency>
 ```
