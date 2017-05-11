@@ -30,12 +30,11 @@
 	</developers>
 
 	<distributionManagement>
-		<repository>
-			<id>internal.repo</id>
-			<name>Temporary Staging Repository</name>
-			<url>file://${project.basedir}/mvn-repo</url>
-		</repository>
-	</distributionManagement>
+        <repository>
+            <id>myMavenRepo.write</id>
+            <url>https://mymavenrepo.com/repo/pMfxLKkrHNX8QfyC24xw/</url>
+        </repository>
+    </distributionManagement>
 
 	<build>
 		<plugins>
@@ -147,9 +146,6 @@
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
 				<version>2.8.1</version>
-				<configuration>
-					<altDeploymentRepository>internal.repo::default::file://${project.basedir}/mvn-repo</altDeploymentRepository>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
