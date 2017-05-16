@@ -44,7 +44,6 @@ public class Token {
 	    String innerJwt = jws.getCompactSerialization();
 	    
 	    return innerJwt;
-
 		
 	}
 

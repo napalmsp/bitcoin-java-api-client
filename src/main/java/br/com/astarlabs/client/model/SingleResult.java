@@ -26,8 +26,8 @@ public class SingleResult {
   @SerializedName("result")
   private String result = null;
 
-  @SerializedName("error")
-  private Boolean error = null;
+  @SerializedName("status")
+  private Boolean status = null;
 
   public SingleResult result(String result) {
     this.result = result;
@@ -47,8 +47,8 @@ public class SingleResult {
     this.result = result;
   }
 
-  public SingleResult error(Boolean error) {
-    this.error = error;
+  public SingleResult error(Boolean status) {
+    this.status = status;
     return this;
   }
 
@@ -57,12 +57,12 @@ public class SingleResult {
    * @return error
   **/
   @ApiModelProperty(example = "null", value = "true or false")
-  public Boolean getError() {
-    return error;
+  public Boolean getStatus() {
+    return status;
   }
 
-  public void setError(Boolean error) {
-    this.error = error;
+  public void setError(Boolean status) {
+    this.status = status;
   }
 
 
@@ -76,12 +76,12 @@ public class SingleResult {
     }
     SingleResult singleResult = (SingleResult) o;
     return Objects.equals(this.result, singleResult.result) &&
-        Objects.equals(this.error, singleResult.error);
+        Objects.equals(this.status, singleResult.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(result, error);
+    return Objects.hash(result, status);
   }
 
 
@@ -91,7 +91,7 @@ public class SingleResult {
     sb.append("class SingleResult {\n");
     
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
-    sb.append("    error: ").append(toIndentedString(error)).append("\n");
+    sb.append("    error: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

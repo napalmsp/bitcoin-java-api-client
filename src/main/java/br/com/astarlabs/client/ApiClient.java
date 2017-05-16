@@ -741,15 +741,17 @@ public class ApiClient {
      *   null will be returned (not to set the Accept header explicitly).
      */
     public String selectHeaderAccept(String[] accepts) {
-        if (accepts.length == 0) {
-            return null;
-        }
-        for (String accept : accepts) {
-            if (isJsonMime(accept)) {
-                return accept;
-            }
-        }
-        return StringUtil.join(accepts, ",");
+    	
+    	return "application/x-www-form-urlencoded";
+//        if (accepts.length == 0) {
+//            return null;
+//        }
+//        for (String accept : accepts) {
+//            if (isJsonMime(accept)) {
+//                return accept;
+//            }
+//        }
+//        return StringUtil.join(accepts, ",");
     }
 
     /**
@@ -763,7 +765,7 @@ public class ApiClient {
      */
     public String selectHeaderContentType(String[] contentTypes) {
         if (contentTypes.length == 0) {
-            return "application/json";
+            return "application/x-www-form-urlencoded";
         }
         for (String contentType : contentTypes) {
             if (isJsonMime(contentType)) {

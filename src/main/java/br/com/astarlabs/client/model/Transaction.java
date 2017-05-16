@@ -25,13 +25,13 @@ import org.joda.time.DateTime;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-15T19:24:21.978-03:00")
 public class Transaction {
   @SerializedName("creationdate")
-  private DateTime creationdate = null;
+  private String creationdate = null;
 
   @SerializedName("confirmationdate")
-  private DateTime confirmationdate = null;
+  private String confirmationdate = null;
 
   @SerializedName("blockchaincreationdate")
-  private DateTime blockchaincreationdate = null;
+  private String blockchaincreationdate = null;
 
   @SerializedName("txid")
   private String txid = null;
@@ -66,7 +66,7 @@ public class Transaction {
   @SerializedName("test")
   private Integer test = null;
 
-  public Transaction creationdate(DateTime creationdate) {
+  public Transaction creationdate(String creationdate) {
     this.creationdate = creationdate;
     return this;
   }
@@ -76,15 +76,15 @@ public class Transaction {
    * @return creationdate
   **/
   @ApiModelProperty(example = "null", value = "API register creation date.")
-  public DateTime getCreationdate() {
+  public String getCreationdate() {
     return creationdate;
   }
 
-  public void setCreationdate(DateTime creationdate) {
+  public void setCreationdate(String creationdate) {
     this.creationdate = creationdate;
   }
 
-  public Transaction confirmationdate(DateTime confirmationdate) {
+  public Transaction confirmationdate(String confirmationdate) {
     this.confirmationdate = confirmationdate;
     return this;
   }
@@ -94,15 +94,15 @@ public class Transaction {
    * @return confirmationdate
   **/
   @ApiModelProperty(example = "null", value = "first confirmation date.")
-  public DateTime getConfirmationdate() {
+  public String getConfirmationdate() {
     return confirmationdate;
   }
 
-  public void setConfirmationdate(DateTime confirmationdate) {
+  public void setConfirmationdate(String confirmationdate) {
     this.confirmationdate = confirmationdate;
   }
 
-  public Transaction blockchaincreationdate(DateTime blockchaincreationdate) {
+  public Transaction blockchaincreationdate(String blockchaincreationdate) {
     this.blockchaincreationdate = blockchaincreationdate;
     return this;
   }
@@ -112,11 +112,11 @@ public class Transaction {
    * @return blockchaincreationdate
   **/
   @ApiModelProperty(example = "null", value = "blockchain creation date.")
-  public DateTime getBlockchaincreationdate() {
+  public String getBlockchaincreationdate() {
     return blockchaincreationdate;
   }
 
-  public void setBlockchaincreationdate(DateTime blockchaincreationdate) {
+  public void setBlockchaincreationdate(String blockchaincreationdate) {
     this.blockchaincreationdate = blockchaincreationdate;
   }
 
