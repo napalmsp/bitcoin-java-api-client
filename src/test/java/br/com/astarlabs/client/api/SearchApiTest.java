@@ -13,12 +13,13 @@
 
 package br.com.astarlabs.client.api;
 
+import java.util.List;
+
 import org.junit.Ignore;
 import org.junit.Test;
 
 import br.com.astarlabs.client.ApiException;
 import br.com.astarlabs.client.Token;
-import br.com.astarlabs.client.api.SearchApi;
 import br.com.astarlabs.client.model.Transaction;
 
 /**
@@ -37,6 +38,7 @@ public class SearchApiTest {
      * @throws ApiException
      *          if the Api call fails
      */
+    @Ignore
     @Test
     public void searchByAPIIDTest() throws ApiException {
     	
@@ -83,7 +85,7 @@ public class SearchApiTest {
         String password = "test";
         String content = "test";
         
-        Transaction response = api.searchByContent(token, account, user, password, content);
+        List<Transaction> response = api.searchByContent(token, account, user, password, content);
 
         // TODO: test validations
     }
@@ -112,7 +114,7 @@ public class SearchApiTest {
         String password = "test";
         String hash = "test";
         
-        Transaction response = api.searchByHash(token, account, user, password, hash);
+        List<Transaction> response = api.searchByHash(token, account, user, password, hash);
 
         // TODO: test validations
     }

@@ -13,6 +13,13 @@
 
 package br.com.astarlabs.client.api;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.google.gson.reflect.TypeToken;
 
 import br.com.astarlabs.client.ApiCallback;
@@ -24,13 +31,6 @@ import br.com.astarlabs.client.Pair;
 import br.com.astarlabs.client.ProgressRequestBody;
 import br.com.astarlabs.client.ProgressResponseBody;
 import br.com.astarlabs.client.model.Transaction;
-
-import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class SearchApi {
     private ApiClient apiClient;
@@ -311,8 +311,8 @@ public class SearchApi {
      * @return Transaction
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Transaction searchByContent(String token, Integer account, String user, String password, String content) throws ApiException {
-        ApiResponse<Transaction> resp = searchByContentWithHttpInfo(token, account, user, password, content);
+    public List<Transaction> searchByContent(String token, Integer account, String user, String password, String content) throws ApiException {
+        ApiResponse<List<Transaction>> resp = searchByContentWithHttpInfo(token, account, user, password, content);
         return resp.getData();
     }
 
@@ -327,9 +327,9 @@ public class SearchApi {
      * @return ApiResponse&lt;Transaction&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Transaction> searchByContentWithHttpInfo(String token, Integer account, String user, String password, String content) throws ApiException {
+    public ApiResponse<List<Transaction>> searchByContentWithHttpInfo(String token, Integer account, String user, String password, String content) throws ApiException {
         com.squareup.okhttp.Call call = searchByContentValidateBeforeCall(token, account, user, password, content, null, null);
-        Type localVarReturnType = new TypeToken<Transaction>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<Transaction>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -471,8 +471,8 @@ public class SearchApi {
      * @return Transaction
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Transaction searchByHash(String token, Integer account, String user, String password, String hash) throws ApiException {
-        ApiResponse<Transaction> resp = searchByHashWithHttpInfo(token, account, user, password, hash);
+    public List<Transaction> searchByHash(String token, Integer account, String user, String password, String hash) throws ApiException {
+        ApiResponse<List<Transaction>> resp = searchByHashWithHttpInfo(token, account, user, password, hash);
         return resp.getData();
     }
 
@@ -487,9 +487,9 @@ public class SearchApi {
      * @return ApiResponse&lt;Transaction&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Transaction> searchByHashWithHttpInfo(String token, Integer account, String user, String password, String hash) throws ApiException {
+    public ApiResponse<List<Transaction>> searchByHashWithHttpInfo(String token, Integer account, String user, String password, String hash) throws ApiException {
         com.squareup.okhttp.Call call = searchByHashValidateBeforeCall(token, account, user, password, hash, null, null);
-        Type localVarReturnType = new TypeToken<Transaction>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<Transaction>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 

@@ -10,379 +10,391 @@
  * Do not edit the class manually.
  */
 
-
 package br.com.astarlabs.client.model;
 
+import java.util.Date;
 import java.util.Objects;
+
 import com.google.gson.annotations.SerializedName;
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.DateTime;
 
 /**
  * Transaction
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-15T19:24:21.978-03:00")
 public class Transaction {
-  @SerializedName("creationdate")
-  private String creationdate = null;
 
-  @SerializedName("confirmationdate")
-  private String confirmationdate = null;
+	@SerializedName("id")
+	private Integer id = null;
 
-  @SerializedName("blockchaincreationdate")
-  private String blockchaincreationdate = null;
+	@SerializedName("creationdate")
+	private Date creationdate = null;
 
-  @SerializedName("txid")
-  private String txid = null;
+	@SerializedName("confirmationdate")
+	private Date confirmationdate = null;
 
-  @SerializedName("amount")
-  private Float amount = null;
+	@SerializedName("blockchaincreationdate")
+	private Date blockchaincreationdate = null;
 
-  @SerializedName("fee")
-  private Float fee = null;
+	@SerializedName("txid")
+	private String txid = null;
 
-  @SerializedName("txsize")
-  private Integer txsize = null;
+	@SerializedName("amount")
+	private Float amount = null;
 
-  @SerializedName("txhex")
-  private String txhex = null;
+	@SerializedName("fee")
+	private Float fee = null;
 
-  @SerializedName("data")
-  private String data = null;
+	@SerializedName("txsize")
+	private Integer txsize = null;
 
-  @SerializedName("feepriority")
-  private Integer feepriority = null;
+	@SerializedName("txhex")
+	private String txhex = null;
 
-  @SerializedName("confirmations")
-  private Integer confirmations = null;
+	@SerializedName("data")
+	private String data = null;
 
-  @SerializedName("errormessage")
-  private String errormessage = null;
+	@SerializedName("feepriority")
+	private Integer feepriority = null;
 
-  @SerializedName("coin")
-  private String coin = null;
+	@SerializedName("confirmations")
+	private Integer confirmations = null;
 
-  @SerializedName("test")
-  private Integer test = null;
+	@SerializedName("errormessage")
+	private String errormessage = null;
 
-  public Transaction creationdate(String creationdate) {
-    this.creationdate = creationdate;
-    return this;
-  }
+	@SerializedName("coin")
+	private String coin = null;
 
-   /**
-   * API register creation date.
-   * @return creationdate
-  **/
-  @ApiModelProperty(example = "null", value = "API register creation date.")
-  public String getCreationdate() {
-    return creationdate;
-  }
+	@SerializedName("test")
+	private Integer test = null;
 
-  public void setCreationdate(String creationdate) {
-    this.creationdate = creationdate;
-  }
+	public Transaction creationdate(Date creationdate) {
+		this.creationdate = creationdate;
+		return this;
+	}
 
-  public Transaction confirmationdate(String confirmationdate) {
-    this.confirmationdate = confirmationdate;
-    return this;
-  }
+	/**
+	 * API register creation date.
+	 * 
+	 * @return creationdate
+	 **/
+	@ApiModelProperty(example = "null", value = "API register creation date.")
+	public Date getCreationdate() {
+		return creationdate;
+	}
 
-   /**
-   * first confirmation date.
-   * @return confirmationdate
-  **/
-  @ApiModelProperty(example = "null", value = "first confirmation date.")
-  public String getConfirmationdate() {
-    return confirmationdate;
-  }
+	public void setCreationdate(Date creationdate) {
+		this.creationdate = creationdate;
+	}
 
-  public void setConfirmationdate(String confirmationdate) {
-    this.confirmationdate = confirmationdate;
-  }
+	public Transaction confirmationdate(Date confirmationdate) {
+		this.confirmationdate = confirmationdate;
+		return this;
+	}
 
-  public Transaction blockchaincreationdate(String blockchaincreationdate) {
-    this.blockchaincreationdate = blockchaincreationdate;
-    return this;
-  }
+	/**
+	 * first confirmation date.
+	 * 
+	 * @return confirmationdate
+	 **/
+	@ApiModelProperty(example = "null", value = "first confirmation date.")
+	public Date getConfirmationdate() {
+		return confirmationdate;
+	}
 
-   /**
-   * blockchain creation date.
-   * @return blockchaincreationdate
-  **/
-  @ApiModelProperty(example = "null", value = "blockchain creation date.")
-  public String getBlockchaincreationdate() {
-    return blockchaincreationdate;
-  }
+	public void setConfirmationdate(Date confirmationdate) {
+		this.confirmationdate = confirmationdate;
+	}
 
-  public void setBlockchaincreationdate(String blockchaincreationdate) {
-    this.blockchaincreationdate = blockchaincreationdate;
-  }
+	public Transaction blockchaincreationdate(Date blockchaincreationdate) {
+		this.blockchaincreationdate = blockchaincreationdate;
+		return this;
+	}
 
-  public Transaction txid(String txid) {
-    this.txid = txid;
-    return this;
-  }
+	/**
+	 * blockchain creation date.
+	 * 
+	 * @return blockchaincreationdate
+	 **/
+	@ApiModelProperty(example = "null", value = "blockchain creation date.")
+	public Date getBlockchaincreationdate() {
+		return blockchaincreationdate;
+	}
 
-   /**
-   * hash ID of blockchain transaction.
-   * @return txid
-  **/
-  @ApiModelProperty(example = "null", value = "hash ID of blockchain transaction.")
-  public String getTxid() {
-    return txid;
-  }
+	public void setBlockchaincreationdate(Date blockchaincreationdate) {
+		this.blockchaincreationdate = blockchaincreationdate;
+	}
 
-  public void setTxid(String txid) {
-    this.txid = txid;
-  }
+	public Transaction txid(String txid) {
+		this.txid = txid;
+		return this;
+	}
 
-  public Transaction amount(Float amount) {
-    this.amount = amount;
-    return this;
-  }
+	/**
+	 * hash ID of blockchain transaction.
+	 * 
+	 * @return txid
+	 **/
+	@ApiModelProperty(example = "null", value = "hash ID of blockchain transaction.")
+	public String getTxid() {
+		return txid;
+	}
 
-   /**
-   * amount sended, 0 if OP_RETURN.
-   * @return amount
-  **/
-  @ApiModelProperty(example = "null", value = "amount sended, 0 if OP_RETURN.")
-  public Float getAmount() {
-    return amount;
-  }
+	public void setTxid(String txid) {
+		this.txid = txid;
+	}
 
-  public void setAmount(Float amount) {
-    this.amount = amount;
-  }
+	public Transaction amount(Float amount) {
+		this.amount = amount;
+		return this;
+	}
 
-  public Transaction fee(Float fee) {
-    this.fee = fee;
-    return this;
-  }
+	/**
+	 * amount sended, 0 if OP_RETURN.
+	 * 
+	 * @return amount
+	 **/
+	@ApiModelProperty(example = "null", value = "amount sended, 0 if OP_RETURN.")
+	public Float getAmount() {
+		return amount;
+	}
 
-   /**
-   * fee spended in the blockchain transaction.
-   * @return fee
-  **/
-  @ApiModelProperty(example = "null", value = "fee spended in the blockchain transaction.")
-  public Float getFee() {
-    return fee;
-  }
+	public void setAmount(Float amount) {
+		this.amount = amount;
+	}
 
-  public void setFee(Float fee) {
-    this.fee = fee;
-  }
+	public Transaction fee(Float fee) {
+		this.fee = fee;
+		return this;
+	}
 
-  public Transaction txsize(Integer txsize) {
-    this.txsize = txsize;
-    return this;
-  }
+	/**
+	 * fee spended in the blockchain transaction.
+	 * 
+	 * @return fee
+	 **/
+	@ApiModelProperty(example = "null", value = "fee spended in the blockchain transaction.")
+	public Float getFee() {
+		return fee;
+	}
 
-   /**
-   * tx size.
-   * @return txsize
-  **/
-  @ApiModelProperty(example = "null", value = "tx size.")
-  public Integer getTxsize() {
-    return txsize;
-  }
+	public void setFee(Float fee) {
+		this.fee = fee;
+	}
 
-  public void setTxsize(Integer txsize) {
-    this.txsize = txsize;
-  }
+	public Transaction txsize(Integer txsize) {
+		this.txsize = txsize;
+		return this;
+	}
 
-  public Transaction txhex(String txhex) {
-    this.txhex = txhex;
-    return this;
-  }
+	/**
+	 * tx size.
+	 * 
+	 * @return txsize
+	 **/
+	@ApiModelProperty(example = "null", value = "tx size.")
+	public Integer getTxsize() {
+		return txsize;
+	}
 
-   /**
-   * tx hexadecimal.
-   * @return txhex
-  **/
-  @ApiModelProperty(example = "null", value = "tx hexadecimal.")
-  public String getTxhex() {
-    return txhex;
-  }
+	public void setTxsize(Integer txsize) {
+		this.txsize = txsize;
+	}
 
-  public void setTxhex(String txhex) {
-    this.txhex = txhex;
-  }
+	public Transaction txhex(String txhex) {
+		this.txhex = txhex;
+		return this;
+	}
 
-  public Transaction data(String data) {
-    this.data = data;
-    return this;
-  }
+	/**
+	 * tx hexadecimal.
+	 * 
+	 * @return txhex
+	 **/
+	@ApiModelProperty(example = "null", value = "tx hexadecimal.")
+	public String getTxhex() {
+		return txhex;
+	}
 
-   /**
-   * file or string hash or address
-   * @return data
-  **/
-  @ApiModelProperty(example = "null", value = "file or string hash or address")
-  public String getData() {
-    return data;
-  }
+	public void setTxhex(String txhex) {
+		this.txhex = txhex;
+	}
 
-  public void setData(String data) {
-    this.data = data;
-  }
+	public Transaction data(String data) {
+		this.data = data;
+		return this;
+	}
 
-  public Transaction feepriority(Integer feepriority) {
-    this.feepriority = feepriority;
-    return this;
-  }
+	/**
+	 * file or string hash or address
+	 * 
+	 * @return data
+	 **/
+	@ApiModelProperty(example = "null", value = "file or string hash or address")
+	public String getData() {
+		return data;
+	}
 
-   /**
-   * account fee priority
-   * @return feepriority
-  **/
-  @ApiModelProperty(example = "null", value = "account fee priority")
-  public Integer getFeepriority() {
-    return feepriority;
-  }
+	public void setData(String data) {
+		this.data = data;
+	}
 
-  public void setFeepriority(Integer feepriority) {
-    this.feepriority = feepriority;
-  }
+	public Transaction feepriority(Integer feepriority) {
+		this.feepriority = feepriority;
+		return this;
+	}
 
-  public Transaction confirmations(Integer confirmations) {
-    this.confirmations = confirmations;
-    return this;
-  }
+	/**
+	 * account fee priority
+	 * 
+	 * @return feepriority
+	 **/
+	@ApiModelProperty(example = "null", value = "account fee priority")
+	public Integer getFeepriority() {
+		return feepriority;
+	}
 
-   /**
-   * actual transaction confirmations count
-   * @return confirmations
-  **/
-  @ApiModelProperty(example = "null", value = "actual transaction confirmations count")
-  public Integer getConfirmations() {
-    return confirmations;
-  }
+	public void setFeepriority(Integer feepriority) {
+		this.feepriority = feepriority;
+	}
 
-  public void setConfirmations(Integer confirmations) {
-    this.confirmations = confirmations;
-  }
+	public Transaction confirmations(Integer confirmations) {
+		this.confirmations = confirmations;
+		return this;
+	}
 
-  public Transaction errormessage(String errormessage) {
-    this.errormessage = errormessage;
-    return this;
-  }
+	/**
+	 * actual transaction confirmations count
+	 * 
+	 * @return confirmations
+	 **/
+	@ApiModelProperty(example = "null", value = "actual transaction confirmations count")
+	public Integer getConfirmations() {
+		return confirmations;
+	}
 
-   /**
-   * error message in case of errors
-   * @return errormessage
-  **/
-  @ApiModelProperty(example = "null", value = "error message in case of errors")
-  public String getErrormessage() {
-    return errormessage;
-  }
+	public void setConfirmations(Integer confirmations) {
+		this.confirmations = confirmations;
+	}
 
-  public void setErrormessage(String errormessage) {
-    this.errormessage = errormessage;
-  }
+	public Transaction errormessage(String errormessage) {
+		this.errormessage = errormessage;
+		return this;
+	}
 
-  public Transaction coin(String coin) {
-    this.coin = coin;
-    return this;
-  }
+	/**
+	 * error message in case of errors
+	 * 
+	 * @return errormessage
+	 **/
+	@ApiModelProperty(example = "null", value = "error message in case of errors")
+	public String getErrormessage() {
+		return errormessage;
+	}
 
-   /**
-   * coin
-   * @return coin
-  **/
-  @ApiModelProperty(example = "null", value = "coin")
-  public String getCoin() {
-    return coin;
-  }
+	public void setErrormessage(String errormessage) {
+		this.errormessage = errormessage;
+	}
 
-  public void setCoin(String coin) {
-    this.coin = coin;
-  }
+	public Transaction coin(String coin) {
+		this.coin = coin;
+		return this;
+	}
 
-  public Transaction test(Integer test) {
-    this.test = test;
-    return this;
-  }
+	/**
+	 * coin
+	 * 
+	 * @return coin
+	 **/
+	@ApiModelProperty(example = "null", value = "coin")
+	public String getCoin() {
+		return coin;
+	}
 
-   /**
-   * test
-   * @return test
-  **/
-  @ApiModelProperty(example = "null", value = "test")
-  public Integer getTest() {
-    return test;
-  }
+	public void setCoin(String coin) {
+		this.coin = coin;
+	}
 
-  public void setTest(Integer test) {
-    this.test = test;
-  }
+	public Transaction test(Integer test) {
+		this.test = test;
+		return this;
+	}
 
+	/**
+	 * test
+	 * 
+	 * @return test
+	 **/
+	@ApiModelProperty(example = "null", value = "test")
+	public Integer getTest() {
+		return test;
+	}
 
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Transaction transaction = (Transaction) o;
-    return Objects.equals(this.creationdate, transaction.creationdate) &&
-        Objects.equals(this.confirmationdate, transaction.confirmationdate) &&
-        Objects.equals(this.blockchaincreationdate, transaction.blockchaincreationdate) &&
-        Objects.equals(this.txid, transaction.txid) &&
-        Objects.equals(this.amount, transaction.amount) &&
-        Objects.equals(this.fee, transaction.fee) &&
-        Objects.equals(this.txsize, transaction.txsize) &&
-        Objects.equals(this.txhex, transaction.txhex) &&
-        Objects.equals(this.data, transaction.data) &&
-        Objects.equals(this.feepriority, transaction.feepriority) &&
-        Objects.equals(this.confirmations, transaction.confirmations) &&
-        Objects.equals(this.errormessage, transaction.errormessage) &&
-        Objects.equals(this.coin, transaction.coin) &&
-        Objects.equals(this.test, transaction.test);
-  }
+	public void setTest(Integer test) {
+		this.test = test;
+	}
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(creationdate, confirmationdate, blockchaincreationdate, txid, amount, fee, txsize, txhex, data, feepriority, confirmations, errormessage, coin, test);
-  }
+	@Override
+	public boolean equals(java.lang.Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		Transaction transaction = (Transaction) o;
+		return Objects.equals(this.creationdate, transaction.creationdate)
+				&& Objects.equals(this.confirmationdate, transaction.confirmationdate)
+				&& Objects.equals(this.blockchaincreationdate, transaction.blockchaincreationdate)
+				&& Objects.equals(this.txid, transaction.txid) && Objects.equals(this.amount, transaction.amount)
+				&& Objects.equals(this.fee, transaction.fee) && Objects.equals(this.txsize, transaction.txsize)
+				&& Objects.equals(this.txhex, transaction.txhex) && Objects.equals(this.data, transaction.data)
+				&& Objects.equals(this.feepriority, transaction.feepriority)
+				&& Objects.equals(this.confirmations, transaction.confirmations)
+				&& Objects.equals(this.errormessage, transaction.errormessage)
+				&& Objects.equals(this.coin, transaction.coin) && Objects.equals(this.test, transaction.test);
+	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(creationdate, confirmationdate, blockchaincreationdate, txid, amount, fee, txsize, txhex,
+				data, feepriority, confirmations, errormessage, coin, test);
+	}
 
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Transaction {\n");
-    
-    sb.append("    creationdate: ").append(toIndentedString(creationdate)).append("\n");
-    sb.append("    confirmationdate: ").append(toIndentedString(confirmationdate)).append("\n");
-    sb.append("    blockchaincreationdate: ").append(toIndentedString(blockchaincreationdate)).append("\n");
-    sb.append("    txid: ").append(toIndentedString(txid)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
-    sb.append("    txsize: ").append(toIndentedString(txsize)).append("\n");
-    sb.append("    txhex: ").append(toIndentedString(txhex)).append("\n");
-    sb.append("    data: ").append(toIndentedString(data)).append("\n");
-    sb.append("    feepriority: ").append(toIndentedString(feepriority)).append("\n");
-    sb.append("    confirmations: ").append(toIndentedString(confirmations)).append("\n");
-    sb.append("    errormessage: ").append(toIndentedString(errormessage)).append("\n");
-    sb.append("    coin: ").append(toIndentedString(coin)).append("\n");
-    sb.append("    test: ").append(toIndentedString(test)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("class Transaction {\n");
 
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-  
+		sb.append("    creationdate: ").append(toIndentedString(creationdate)).append("\n");
+		sb.append("    confirmationdate: ").append(toIndentedString(confirmationdate)).append("\n");
+		sb.append("    blockchaincreationdate: ").append(toIndentedString(blockchaincreationdate)).append("\n");
+		sb.append("    txid: ").append(toIndentedString(txid)).append("\n");
+		sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+		sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
+		sb.append("    txsize: ").append(toIndentedString(txsize)).append("\n");
+		sb.append("    txhex: ").append(toIndentedString(txhex)).append("\n");
+		sb.append("    data: ").append(toIndentedString(data)).append("\n");
+		sb.append("    feepriority: ").append(toIndentedString(feepriority)).append("\n");
+		sb.append("    confirmations: ").append(toIndentedString(confirmations)).append("\n");
+		sb.append("    errormessage: ").append(toIndentedString(errormessage)).append("\n");
+		sb.append("    coin: ").append(toIndentedString(coin)).append("\n");
+		sb.append("    test: ").append(toIndentedString(test)).append("\n");
+		sb.append("}");
+		return sb.toString();
+	}
+
+	/**
+	 * Convert the given object to string with each line indented by 4 spaces
+	 * (except the first line).
+	 */
+	private String toIndentedString(java.lang.Object o) {
+		if (o == null) {
+			return "null";
+		}
+		return o.toString().replace("\n", "\n    ");
+	}
+
 }
-
