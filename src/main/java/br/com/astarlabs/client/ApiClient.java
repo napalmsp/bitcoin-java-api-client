@@ -13,16 +13,55 @@
 
 package br.com.astarlabs.client;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.security.GeneralSecurityException;
+import java.security.KeyStore;
+import java.security.SecureRandom;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.KeyManager;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.TrustManagerFactory;
+import javax.net.ssl.X509TrustManager;
+
+import com.google.gson.reflect.TypeToken;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.FormEncodingBuilder;
+import com.squareup.okhttp.Headers;
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.MultipartBuilder;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
-import com.squareup.okhttp.Response;
 import com.squareup.okhttp.RequestBody;
-import com.squareup.okhttp.FormEncodingBuilder;
-import com.squareup.okhttp.MultipartBuilder;
-import com.squareup.okhttp.MediaType;
-import com.squareup.okhttp.Headers;
+import com.squareup.okhttp.Response;
 import com.squareup.okhttp.internal.http.HttpMethod;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor.Level;
@@ -31,51 +70,6 @@ import br.com.astarlabs.client.auth.ApiKeyAuth;
 import br.com.astarlabs.client.auth.Authentication;
 import br.com.astarlabs.client.auth.HttpBasicAuth;
 import br.com.astarlabs.client.auth.OAuth;
-
-import java.lang.reflect.Type;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.TimeZone;
-import java.util.concurrent.TimeUnit;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import java.net.URLEncoder;
-import java.net.URLConnection;
-
-import java.io.File;
-import java.io.InputStream;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-
-import java.security.GeneralSecurityException;
-import java.security.KeyStore;
-import java.security.SecureRandom;
-import java.security.cert.Certificate;
-import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.text.ParseException;
-
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.KeyManager;
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.TrustManagerFactory;
-import javax.net.ssl.X509TrustManager;
-
 import okio.BufferedSink;
 import okio.Okio;
 
@@ -112,7 +106,7 @@ public class ApiClient {
      */
     public static final String LENIENT_DATETIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
-    private String basePath = "http://52.168.143.16:8085/v2";
+    private String basePath = null;
     private boolean lenientOnJson = false;
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -137,6 +131,7 @@ public class ApiClient {
      * Constructor for ApiClient
      */
     public ApiClient() {
+    	
         httpClient = new OkHttpClient();
 
         verifyingSsl = true;
@@ -163,6 +158,29 @@ public class ApiClient {
         authentications = new HashMap<String, Authentication>();
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
+        
+        //<> Parameters request
+        Request request = new Request.Builder()
+        	      .url("https://astarlabs.github.io/bitcoin-client-server/server-info.json")
+        	      .build();
+
+		Response response = null;
+		List<ServerInfo> sInfo = null;
+		try {
+			response = httpClient.newCall(request).execute();
+			sInfo = deserialize(response, new TypeToken<List<ServerInfo>>(){}.getType());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if( sInfo != null){
+			basePath = sInfo.get(0).getFullAddress();
+		}else{
+			System.out.println("Can't get server address");
+		}
+		//</> Parameters request
+		
     }
 
     /**
