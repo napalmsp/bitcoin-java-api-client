@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class ServerInfo {
 	
-	@SerializedName("full-address")
+	@SerializedName("fulladdress")
 	private String fullAddress;
 	private String host;
 	private Integer port;
