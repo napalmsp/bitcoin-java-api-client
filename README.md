@@ -1,5 +1,7 @@
 # Bitcoin Java API Client
 
+For more information, please visit [http://www.astarlabs.com](http://www.astarlabs.com)
+
 ## Requirements
 
 Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
