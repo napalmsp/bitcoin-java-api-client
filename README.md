@@ -105,12 +105,13 @@ All URIs are relative to *http://localhost:8080/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*SearchApi* | [**searchByAPIID**](docs/SearchApi.md#searchByAPIID) | **POST** /search/registered/id | Get transaction informations by API ID
-*SearchApi* | [**searchByContent**](docs/SearchApi.md#searchByContent) | **POST** /search/registered/content | Get transaction informations by file or string content
-*SearchApi* | [**searchByHash**](docs/SearchApi.md#searchByHash) | **POST** /search/registered/hash | Get transaction informations by file or string hash
-*SendApi* | [**sendFile**](docs/SendApi.md#sendFile) | **POST** /send/opreturn/base64 | Send file hash to bitcoin blockchain
-*SendApi* | [**sendPayAddress**](docs/SendApi.md#sendPayAddress) | **POST** /send/payaddress | Send a value for address
-*SendApi* | [**sendString**](docs/SendApi.md#sendString) | **POST** /send/opreturn/string | Send string to bitcoin blockchain
+*SearchApi* | [**searchByAPIID**](docs/Api/SearchApi.md#searchbyapiid) | **POST** /search/registered/id | Get transaction informations by API ID
+*SearchApi* | [**searchByContent**](docs/Api/SearchApi.md#searchbycontent) | **POST** /search/registered/content | Get transaction informations by file or string content
+*SearchApi* | [**searchByHash**](docs/Api/SearchApi.md#searchbyhash) | **POST** /search/registered/hash | Get transaction informations by file or string hash
+*SendApi* | [**sendFile**](docs/Api/SendApi.md#sendfile) | **POST** /send/opreturn/base64 | Send file hash to bitcoin blockchain
+*SendApi* | [**sendHash**](docs/Api/SendApi.md#sendhash) | **POST** /send/opreturn/hash | Send hash to bitcoin blockchain
+*SendApi* | [**sendPayAddress**](docs/Api/SendApi.md#sendpayaddress) | **POST** /send/payaddress | Send a value for address
+*SendApi* | [**sendString**](docs/Api/SendApi.md#sendstring) | **POST** /send/opreturn/string | Send string to bitcoin blockchain
 
 
 ## Documentation for Models
