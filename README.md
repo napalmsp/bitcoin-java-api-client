@@ -37,7 +37,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.astarlabs</groupId>
     <artifactId>bitcoin-java-api-client</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -47,7 +47,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.astarlabs:bitcoin-java-api-client:1.1.1"
+compile "com.astarlabs:bitcoin-java-api-client:1.1.2"
 ```
 
 ### Others
@@ -58,7 +58,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/bitcoin-java-api-client-1.1.1.jar
+* target/bitcoin-java-api-client-1.1.2.jar
 * target/lib/*.jar
 
 ## Getting Started

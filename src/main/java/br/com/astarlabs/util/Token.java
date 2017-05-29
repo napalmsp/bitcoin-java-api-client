@@ -1,4 +1,4 @@
-package br.com.astarlabs.client;
+package br.com.astarlabs.util;
 
 import java.security.KeyFactory;
 import java.security.PrivateKey;
@@ -7,7 +7,6 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.util.Base64;
 
 import org.bouncycastle.util.encoders.Hex;
-import org.jose4j.jwk.RsaJsonWebKey;
 import org.jose4j.jws.AlgorithmIdentifiers;
 import org.jose4j.jws.JsonWebSignature;
 import org.jose4j.jwt.JwtClaims;
@@ -19,6 +18,7 @@ public class Token {
 		Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
 		
 		String decoded = new String(Hex.decode(key));
+		
 		String replaced = decoded.replaceAll("-----BEGIN RSA PRIVATE KEY-----", "")
         .replaceAll("-----END RSA PRIVATE KEY-----", "")
         .replaceAll("\\s", "");

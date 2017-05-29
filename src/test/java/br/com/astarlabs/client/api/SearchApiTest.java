@@ -13,14 +13,18 @@
 
 package br.com.astarlabs.client.api;
 
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.List;
 
 import org.junit.Ignore;
 import org.junit.Test;
 
 import br.com.astarlabs.client.ApiException;
-import br.com.astarlabs.client.Token;
 import br.com.astarlabs.client.model.Transaction;
+import br.com.astarlabs.util.KeyPairUtil;
+import br.com.astarlabs.util.KeyPairUtil.Keys;
+import br.com.astarlabs.util.Token;
 
 /**
  * API tests for SearchApi
@@ -37,14 +41,18 @@ public class SearchApiTest {
      *
      * @throws ApiException
      *          if the Api call fails
+     * @throws IOException 
+     * @throws GeneralSecurityException 
      */
     @Ignore
     @Test
-    public void searchByAPIIDTest() throws ApiException {
+    public void searchByAPIIDTest() throws ApiException, IOException, GeneralSecurityException {
+    	
+    	Keys generate = KeyPairUtil.generateKeys();
     	
         String token = null;
 		try {
-			token = Token.sign("YOUR API PRIVATE KEY");
+			token = Token.sign(generate.getPrivateKey());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -55,7 +63,7 @@ public class SearchApiTest {
         Integer id = 243;
         
         Transaction response = api.searchByAPIID(token, account, user, password, id);
-        
+
         System.out.println(response.getTxid());
        
     }
